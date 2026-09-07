@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark Corner — Style that Speaks</title>
+<meta name="description" content="Spark Corner — handpicked jewelry, cosmetics, and accessories for the elegant and confident woman. Based in Dhaka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFF7FA;
+    --ink:#201229;
+    --muted:#6b5c73;
+    --primary:#FF3E7F;
+    --secondary:#7B2FF2;
+    --accent:#C9A24A;
+    --mint:#00C2A0;
+    --card:#FFFFFF;
+    --line:#F0DFE8;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.05;
+    margin:0;
+  }
+  p{line-height:1.6;color:var(--muted);margin:0;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  a:focus-visible,button:focus-visible,input:focus-visible{
+    outline:3px solid var(--secondary);
+    outline-offset:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,247,250,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;
+    max-width:1160px;margin:0 auto;
+  }
+  .logo-group{display:flex;align-items:center;gap:10px;}
+  .logo-group img{
+    width:38px;height:38px;border-radius:10px;object-fit:cover;
+  }
+  .logo{
+    font-family:'Fraunces',serif;
+    font-size:1.4rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .nav-links{
+    display:flex;gap:28px;align-items:center;
+    list-style:none;margin:0;padding:0;
+    font-weight:600;font-size:0.95rem;
+  }
+  .nav-links a{text-decoration:none;}
+  .nav-links a:hover{color:var(--primary);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.95rem;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--primary);color:#fff;}
+  .btn-outline{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line);}
+  .nav .btn-primary{padding:10px 20px;font-size:0.9rem;}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--ink);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:60px 0 40px;overflow:hidden;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow-tag{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--ink);
+    padding:6px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.85rem;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.5rem,5.2vw,3.8rem);
+    max-width:12ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--primary);}
+  .hero p.lead{margin-top:20px;font-size:1.1rem;max-width:46ch;}
+  .hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .hero-stats{display:flex;gap:32px;margin-top:44px;flex-wrap:wrap;}
+  .hero-stats div{display:flex;flex-direction:column;}
+  .hero-stats strong{font-family:'Fraunces',serif;font-size:1.8rem;}
+  .hero-stats span{font-size:0.85rem;color:var(--muted);font-weight:600;}
+
+  .collage{position:relative;height:440px;}
+  .collage .card{
+    position:absolute;
+    border-radius:24px;
+    box-shadow:0 20px 40px -18px rgba(32,18,41,0.35);
+    display:flex;align-items:center;justify-content:center;
+    font-size:3rem;
+  }
+  .collage .c1{
+    width:230px;height:290px;top:0;left:20px;
+    background:linear-gradient(160deg,var(--primary),#ff7fa8);
+    transform:rotate(-6deg);
+  }
+  .collage .c2{
+    width:190px;height:230px;bottom:10px;right:0;
+    background:linear-gradient(160deg,var(--secondary),#a565ff);
+    transform:rotate(8deg);
+  }
+  .collage .c3{
+    width:150px;height:150px;bottom:60px;left:0;
+    background:linear-gradient(160deg,var(--accent),#e9d3a3);
+    color:var(--ink);
+    transform:rotate(-4deg);
+  }
+
+  /* ---------- Section headings ---------- */
+  .section{padding:72px 0;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    gap:24px;margin-bottom:36px;flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.5rem);max-width:16ch;}
+  .section-head p{max-width:42ch;}
+
+  /* ---------- Filters ---------- */
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;align-items:center;}
+  .pill{
+    padding:9px 18px;
+    border-radius:999px;
+    border:2px solid var(--line);
+    background:#fff;
+    font-weight:700;
+    font-size:0.88rem;
+    cursor:pointer;
+    color:var(--ink);
+    transition:all .15s ease;
+    white-space:nowrap;
+  }
+  .pill:hover{border-color:var(--primary);}
+  .pill.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .search-box{margin-left:auto;position:relative;flex:1 1 220px;max-width:280px;}
+  .search-box input{
+    width:100%;
+    padding:10px 16px 10px 40px;
+    border-radius:999px;
+    border:2px solid var(--line);
+    font-family:'Manrope',sans-serif;
+    font-size:0.9rem;
+    background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="%236b5c73" stroke-width="2"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="15" y2="15"/></svg>') no-repeat 14px center;
+  }
+  .search-box input:focus{border-color:var(--primary);outline:none;}
+
+  /* ---------- Product grid ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;}
+  .product{
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;
+  }
+  .product-photo{
+    height:170px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:2.6rem;position:relative;
+  }
+  .product-tag{
+    position:absolute;top:12px;left:12px;
+    background:rgba(255,255,255,0.85);
+    color:var(--ink);
+    font-size:0.72rem;font-weight:700;
+    padding:4px 10px;border-radius:999px;
+  }
+  .product-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1;}
+  .product-body h3{font-size:1.05rem;font-weight:600;}
+  .product-body p{font-size:0.88rem;}
+  .product-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:12px;}
+  .price{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;}
+  .order-btn{
+    background:var(--ink);color:#fff;
+    border:none;padding:9px 16px;
+    border-radius:999px;font-weight:700;font-size:0.82rem;
+    cursor:pointer;text-decoration:none;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .order-btn:hover{background:var(--primary);}
+  .empty-state{text-align:center;padding:60px 20px;color:var(--muted);grid-column:1/-1;}
+  .load-more-wrap{text-align:center;margin-top:36px;}
+
+  /* ---------- Why us ---------- */
+  .why{background:var(--card);}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .why-card{background:var(--bg);border-radius:var(--radius);padding:28px;border:1px solid var(--line);}
+  .why-card .icon{
+    width:48px;height:48px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;margin-bottom:16px;
+  }
+  .why-card:nth-child(1) .icon{background:#FFE1EA;}
+  .why-card:nth-child(2) .icon{background:#EAE0FF;}
+  .why-card:nth-child(3) .icon{background:#FFF1C9;}
+  .why-card h3{font-size:1.15rem;margin-bottom:8px;}
+  .why-card p{font-size:0.92rem;}
+
+  /* ---------- About ---------- */
+  .about{
+    display:grid;grid-template-columns:0.8fr 1.2fr;gap:48px;align-items:center;
+  }
+  .about-photo{
+    background:linear-gradient(160deg,var(--primary),var(--secondary));
+    border-radius:24px;
+    height:320px;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .about-photo .logo-card{
+    background:#fff;
+    width:200px;height:200px;
+    border-radius:20px;
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+    box-shadow:0 20px 40px -14px rgba(0,0,0,0.4);
+  }
+  .about-photo .logo-card img{width:100%;height:100%;object-fit:contain;}
+  .about h2{font-size:clamp(1.9rem,3.4vw,2.4rem);max-width:14ch;}
+  .about p{margin-top:16px;max-width:52ch;}
+  .about p + p{margin-top:12px;}
+
+  /* ---------- Contact / footer ---------- */
+  .contact{
+    background:linear-gradient(135deg,var(--secondary),#5a1fc2);
+    border-radius:28px;
+    padding:56px 40px;
+    color:#fff;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:32px;align-items:center;
+  }
+  .contact h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.3rem);max-width:14ch;}
+  .contact p{color:#e6d9ff;margin-top:14px;max-width:40ch;}
+  .contact-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;}
+  .contact .btn-primary{background:var(--accent);color:var(--ink);}
+  .contact .btn-outline{border-color:#fff;color:#fff;}
+  .contact-card{
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:20px;padding:26px;
+  }
+  .contact-card dl{margin:0;}
+  .contact-card dt{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.04em;color:#cbb8f5;font-weight:700;margin-top:16px;}
+  .contact-card dt:first-child{margin-top:0;}
+  .contact-card dd{margin:4px 0 0;font-size:1rem;font-weight:600;}
+
+  footer{padding:36px 0 90px;text-align:center;color:var(--muted);font-size:0.88rem;}
+  footer a{text-decoration:underline;}
+
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;
+    background:#25D366;
+    width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px -8px rgba(0,0,0,0.4);
+    z-index:60;font-size:1.6rem;text-decoration:none;
+  }
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .collage{height:320px;margin-top:20px;}
+    .why-grid{grid-template-columns:1fr;}
+    .about{grid-template-columns:1fr;}
+    .about-photo{height:220px;}
+    .contact{grid-template-columns:1fr;padding:36px 24px;}
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;
+      background:var(--bg);
+      flex-direction:column;
+      padding:20px 24px 28px;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .nav .btn-primary{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo-group">
+      <img src="images/logo-icon.jpg" alt="Spark Corner logo">
+      <div class="logo">Spark Corner</div>
+    </div>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-primary" href="#contact" style="display:inline-flex;">Message us</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow-tag">Now taking orders online</span>
+      <h1>Style that <em>speaks</em>, curated just for you.</h1>
+      <p class="lead">Handpicked jewelry, cosmetics, and accessories for the elegant and confident woman — everything you've loved from our Facebook page, now in one easy place to browse.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-primary">Browse collection</a>
+        <a href="https://wa.me/880XXXXXXXXXX?text=Hi!%20I'm%20interested%20in%20products%20from%20Spark%20Corner." class="btn btn-outline" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>100+</strong><span>Products in stock</span></div>
+        <div><strong>Dhaka</strong><span>Based &amp; delivering</span></div>
+        <div><strong>24h</strong><span>Reply time</span></div>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <div class="card c1">💍</div>
+      <div class="card c2">💄</div>
+      <div class="card c3">✨</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Discover the collection</h2>
+      <p>Tap a category to filter, or search for a product by name. Every item ships the way you're used to — just message us to order.</p>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="pill active" data-cat="all">All products</button>
+      <button class="pill" data-cat="Jewelry">Jewelry</button>
+      <button class="pill" data-cat="Makeup">Makeup</button>
+      <button class="pill" data-cat="Skincare">Skincare</button>
+      <button class="pill" data-cat="Accessories">Accessories</button>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </div>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
+    <div class="load-more-wrap" id="loadMoreWrap" style="display:none;">
+      <button class="btn btn-ghost" id="loadMoreBtn">Show more products</button>
+    </div>
+  </div>
+</section>
+
+<section class="section why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The same shop you trust, just easier to browse</h2>
+      <p>Nothing changes about how you order — this is simply the fastest way to see everything at once.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon">✅</div>
+        <h3>Handpicked, always</h3>
+        <p>Every piece is chosen with one thing in mind — helping you shine brighter every day.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">📦</div>
+        <h3>Fast, careful packing</h3>
+        <p>Every order is checked and wrapped by hand before it goes out for delivery.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">💬</div>
+        <h3>Real replies, real fast</h3>
+        <p>Message us on WhatsApp or Facebook and hear back from an actual person within a day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap about">
+    <div class="about-photo">
+      <div class="logo-card">
+        <img src="images/logo.jpg" alt="Spark Corner">
+      </div>
+    </div>
+    <div>
+      <h2>About Spark Corner</h2>
+      <p>Welcome to Spark Corner — your go-to destination for handpicked jewelry, cosmetics, and fashion accessories. Based in Dhaka, Bangladesh, we bring you carefully curated pieces that let your style do the talking.</p>
+      <p>Every item in our collection is selected with one thing in mind: helping the elegant and confident woman shine brighter every day. From statement necklaces to everyday skincare essentials, we've got your glow covered.</p>
+      <p>Follow us on Facebook to see our latest arrivals and exclusive offers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Ready to order? Send us a message.</h2>
+        <p>Tell us which pieces you'd like and we'll confirm price, delivery time, and payment — just like before, only quicker to find what you want.</p>
+        <div class="contact-actions">
+          <a href="https://wa.me/880XXXXXXXXXX?text=Hi!%20I'm%20interested%20in%20products%20from%20Spark%20Corner." class="btn btn-primary" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a href="https://www.facebook.com/people/Spark-Corner/61573068598843/" class="btn btn-outline" target="_blank" rel="noopener">Visit our Facebook page</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <dl>
+          <dt>WhatsApp</dt>
+          <dd>+880 XXX-XXXXXX</dd>
+          <dt>Facebook</dt>
+          <dd>Spark Corner</dd>
+          <dt>Based in</dt>
+          <dd>Dhaka, Bangladesh</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Spark Corner. Style that Speaks ✨ — All prices shown are placeholders, edit the <code>products</code> list in the page code to add the real catalogue.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/880XXXXXXXXXX?text=Hi!%20I'm%20interested%20in%20products%20from%20Spark%20Corner." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+  // ---------- Mobile menu ----------
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ---------- Product data ----------
+  // This is the full list of products shown on the site. Edit it directly:
+  //
+  //   { name: "Gold Plated Necklace", category: "Jewelry", price: 2500,
+  //     desc: "A handpicked statement piece.", image: "images/products/necklace-1.jpg" }
+  //
+  // To add a real photo: put the image file inside the images/products/ folder
+  // (create it if it doesn't exist) next to this HTML file, then set that
+  // product's "image" to its filename, e.g. "images/products/necklace-1.jpg".
+  // Leave "image" out (or set it to null) and the card will show a placeholder
+  // emoji instead — handy for products you haven't photographed yet.
+  // Just copy one block below, paste it, and edit the fields for each new product.
+  const products = [
+    { id:1, name:"Gold Plated Necklace", category:"Jewelry", price:2500, desc:"A handpicked statement piece to finish any look.", emoji:"💍", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" },
+    { id:2, name:"Diamond Stud Earrings", category:"Jewelry", price:5800, desc:"A handpicked statement piece to finish any look.", emoji:"💎", image:null, gradient:"linear-gradient(160deg,#7B2FF2,#c19bff)" },
+    { id:3, name:"Pearl Bracelet Set", category:"Jewelry", price:3200, desc:"A handpicked statement piece to finish any look.", emoji:"📿", image:null, gradient:"linear-gradient(160deg,#C9A24A,#e9d3a3)" },
+    { id:4, name:"Layered Chain Necklace", category:"Jewelry", price:2900, desc:"A handpicked statement piece to finish any look.", emoji:"💍", image:null, gradient:"linear-gradient(160deg,#00C2A0,#7fe8d3)" },
+    { id:5, name:"Charm Anklet", category:"Jewelry", price:1400, desc:"A handpicked statement piece to finish any look.", emoji:"⌚", image:null, gradient:"linear-gradient(160deg,#FF7A3E,#ffbe9a)" },
+    { id:6, name:"Statement Ring", category:"Jewelry", price:1800, desc:"A handpicked statement piece to finish any look.", emoji:"💍", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" },
+    { id:7, name:"Hoop Earrings", category:"Jewelry", price:1500, desc:"A handpicked statement piece to finish any look.", emoji:"💎", image:null, gradient:"linear-gradient(160deg,#7B2FF2,#c19bff)" },
+    { id:8, name:"Crystal Pendant", category:"Jewelry", price:2100, desc:"A handpicked statement piece to finish any look.", emoji:"📿", image:null, gradient:"linear-gradient(160deg,#C9A24A,#e9d3a3)" },
+
+    { id:9, name:"Velvet Matte Lipstick", category:"Makeup", price:1200, desc:"Long-wear, buildable finish that feels weightless.", emoji:"💄", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" },
+    { id:10, name:"Luxury Makeup Palette", category:"Makeup", price:4500, desc:"Long-wear, buildable finish that feels weightless.", emoji:"✨", image:null, gradient:"linear-gradient(160deg,#7B2FF2,#c19bff)" },
+    { id:11, name:"Glow Highlighter", category:"Makeup", price:1100, desc:"Long-wear, buildable finish that feels weightless.", emoji:"✨", image:null, gradient:"linear-gradient(160deg,#C9A24A,#e9d3a3)" },
+    { id:12, name:"Precision Eyeliner", category:"Makeup", price:650, desc:"Long-wear, buildable finish that feels weightless.", emoji:"👁️", image:null, gradient:"linear-gradient(160deg,#00C2A0,#7fe8d3)" },
+    { id:13, name:"Blush Duo", category:"Makeup", price:950, desc:"Long-wear, buildable finish that feels weightless.", emoji:"💋", image:null, gradient:"linear-gradient(160deg,#FF7A3E,#ffbe9a)" },
+    { id:14, name:"Matte Setting Powder", category:"Makeup", price:800, desc:"Long-wear, buildable finish that feels weightless.", emoji:"✨", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" },
+    { id:15, name:"Lash Volume Mascara", category:"Makeup", price:700, desc:"Long-wear, buildable finish that feels weightless.", emoji:"👁️", image:null, gradient:"linear-gradient(160deg,#7B2FF2,#c19bff)" },
+    { id:16, name:"Brow Definer", category:"Makeup", price:600, desc:"Long-wear, buildable finish that feels weightless.", emoji:"💄", image:null, gradient:"linear-gradient(160deg,#C9A24A,#e9d3a3)" },
+
+    { id:17, name:"Hydrating Face Serum", category:"Skincare", price:1800, desc:"Lightweight formula for daily use, suits all skin types.", emoji:"🧴", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" },
+    { id:18, name:"Rose Water Toner", category:"Skincare", price:900, desc:"Lightweight formula for daily use, suits all skin types.", emoji:"💧", image:null, gradient:"linear-gradient(160deg,#7B2FF2,#c19bff)" },
+    { id:19, name:"Clay Face Mask", category:"Skincare", price:750, desc:"Lightweight formula for daily use, suits all skin types.", emoji:"🍃", image:null, gradient:"linear-gradient(160deg,#C9A24A,#e9d3a3)" },
+    { id:20, name:"Vitamin C Drops", category:"Skincare", price:1600, desc:"Lightweight formula for daily use, suits all skin types.", emoji:"🧴", image:null, gradient:"linear-gradient(160deg,#00C2A0,#7fe8d3)" },
+    { id:21, name:"Under-Eye Gel", category:"Skincare", price:1100, desc:"Lightweight formula for daily use, suits all skin types.", emoji:"🧊", image:null, gradient:"linear-gradient(160deg,#FF7A3E,#ffbe9a)" },
+    { id:22, name:"Night Repair Cream", category:"Skincare", price:2000, desc:"Lightweight formula for daily use, suits all skin types.", emoji:"🌙", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" },
+
+    { id:23, name:"Silk Hair Scarf", category:"Accessories", price:800, desc:"The everyday finishing touch for your outfit.", emoji:"🧣", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" },
+    { id:24, name:"Mini Tote Bag", category:"Accessories", price:2200, desc:"The everyday finishing touch for your outfit.", emoji:"👜", image:null, gradient:"linear-gradient(160deg,#7B2FF2,#c19bff)" },
+    { id:25, name:"Cat-Eye Sunglasses", category:"Accessories", price:1500, desc:"The everyday finishing touch for your outfit.", emoji:"🕶️", image:null, gradient:"linear-gradient(160deg,#C9A24A,#e9d3a3)" },
+    { id:26, name:"Bow Hair Clip Set", category:"Accessories", price:450, desc:"The everyday finishing touch for your outfit.", emoji:"🎀", image:null, gradient:"linear-gradient(160deg,#00C2A0,#7fe8d3)" },
+    { id:27, name:"Beaded Keychain", category:"Accessories", price:350, desc:"The everyday finishing touch for your outfit.", emoji:"🎀", image:null, gradient:"linear-gradient(160deg,#FF7A3E,#ffbe9a)" },
+    { id:28, name:"Satin Hairband", category:"Accessories", price:400, desc:"The everyday finishing touch for your outfit.", emoji:"🧣", image:null, gradient:"linear-gradient(160deg,#FF3E7F,#ff9ec1)" }
+
+    // 👆 Copy a block above and paste it here to add more products.
+    // Just bump the "id" by one and fill in the real name/category/price/desc/image.
+  ];
+
+  // ---------- Rendering ----------
+  const grid = document.getElementById('productGrid');
+  const loadMoreWrap = document.getElementById('loadMoreWrap');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const PAGE_SIZE = 12;
+  let currentCat = 'all';
+  let currentSearch = '';
+  let visibleCount = PAGE_SIZE;
+
+  function waLink(product){
+    const msg = `Hi! I'm interested in the ${product.name} (৳ ${product.price.toLocaleString()}) from Spark Corner. Is it available?`;
+    return `https://wa.me/880XXXXXXXXXX?text=${encodeURIComponent(msg)}`;
+  }
+
+  function renderCard(p){
+    const media = p.image
+      ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">`
+      : `<span>${p.emoji}</span>`;
+    return `
+      <div class="product">
+        <div class="product-photo" style="background:${p.gradient}">
+          <span class="product-tag">${p.category}</span>
+          ${media}
+        </div>
+        <div class="product-body">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <div class="product-foot">
+            <span class="price">৳ ${p.price.toLocaleString()}</span>
+            <a class="order-btn" href="${waLink(p)}" target="_blank" rel="noopener">Order &rarr;</a>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function getFiltered(){
+    return products.filter(p => {
+      const matchCat = currentCat === 'all' || p.category === currentCat;
+      const matchSearch = p.name.toLowerCase().includes(currentSearch.toLowerCase());
+      return matchCat && matchSearch;
+    });
+  }
+
+  function render(){
+    const filtered = getFiltered();
+    const slice = filtered.slice(0, visibleCount);
+    if (slice.length === 0){
+      grid.innerHTML = `<div class="empty-state">No products match that search. Try a different keyword or category.</div>`;
+    } else {
+      grid.innerHTML = slice.map(renderCard).join('');
+    }
+    loadMoreWrap.style.display = filtered.length > visibleCount ? 'block' : 'none';
+  }
+
+  document.getElementById('filterBar').addEventListener('click', (e) => {
+    const btn = e.target.closest('.pill');
+    if (!btn) return;
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    currentCat = btn.dataset.cat;
+    visibleCount = PAGE_SIZE;
+    render();
+  });
+
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    currentSearch = e.target.value;
+    visibleCount = PAGE_SIZE;
+    render();
+  });
+
+  loadMoreBtn.addEventListener('click', () => {
+    visibleCount += PAGE_SIZE;
+    render();
+  });
+
+  render();
+</script>
+
+</body>
+</html>
